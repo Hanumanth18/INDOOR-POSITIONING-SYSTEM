@@ -1,17 +1,28 @@
-# Indoor positioning system using Bluetooth Low Energy and machine learning
+Indoor Positioning System Using Beacons and Machine Learning
+Introduction
+An Indoor Positioning System (IPS) is crucial for applications like navigation within buildings where GPS signals are weak or unavailable. In this project, we developed an IPS that leverages machine learning algorithms and beacons to accurately determine the position of a user or object inside a building.
 
-An indoor positioning system model was developed using Bluetooth Low Energy. Machine learning is used to predict the location from the training data. Received Signal Strength Indicator (RSSI) was used as a parameter for location estimation. CC2540 beacons were used as BLE modules.
+Components
+Beacons (CC2540)
+Description: Beacons are wireless devices that use Bluetooth Low Energy (BLE) to broadcast signals to nearby devices.
+Function: These signals can be picked up by smartphones to estimate proximity.
+Machine Learning Algorithms
+We utilized machine learning techniques to analyze beacon signal data:
 
-Refer Project report for detailed description
-
-## Usage
-
-Hex_code.hex is the hex code to be loaded onto the CC2540 beacons.
-
-Data_for_analysis.py is to get the RSSI training data from beacons and save it in a csv file on the PC through serial communication
-
-Demo_data.py is for getting the test data
-
-Demo.py is to develop the logistic regression model from the training data, predict the location from the test data and send the location as a text file to an android device connected via bluetooth.
-
-The android app developed reads the text file from the bluetooth directory on the android device and display the location on the app.
+K-Nearest Neighbors (K-NN)
+Random Forest
+How It Works
+1. Signal Collection (Data Collection)
+Setup: Beacons are placed at known locations within a building.
+Example Locations: Near the entrance of each store, in the food court, near exits, and key areas like restrooms.
+Data Collection: A device (such as a smartphone) collects the strength of beacon signals, also known as the Received Signal Strength Indicator (RSSI).
+2. Data Preprocessing
+Real-Time Data: As a user moves through the building, the smartphone continuously collects RSSI values from nearby beacons.
+Example: If the app receives strong signals from Beacon A but weak signals from Beacon B, the model might predict that the user is near Store X.
+3. Position Estimation
+Model Training: Machine learning models are trained using collected RSSI data to learn the relationship between RSSI patterns and specific locations.
+Real-Time Processing: The trained models estimate the user’s location based on the RSSI values collected in real-time.
+Summary
+Beacons emit signals, and your device collects RSSI values.
+Machine Learning Models are trained on this data to understand the relationship between RSSI patterns and locations.
+Real-Time Processing uses these models to estimate your location based on RSSI values as you move around.
