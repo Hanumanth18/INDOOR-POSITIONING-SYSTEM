@@ -42,18 +42,4 @@ We utilized the following machine learning techniques to analyze beacon signal d
 - **Machine Learning Models** are trained on this data to understand the relationship between RSSI patterns and locations.
 - **Real-Time Processing** uses these models to estimate your location based on RSSI values as you move around.
 
-## Installation
 
-(Include any installation instructions here, if applicable.)
-
-## Usage
-
-(Include any usage instructions or examples here, if applicable.)
-
-## Contributing
-
-(Include guidelines for contributing to the project, if applicable.)
-
-## License
-
-(Include license information, if applicable.)
